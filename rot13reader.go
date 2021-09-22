@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"io"
 	"os"
 	"strings"
@@ -14,7 +13,6 @@ type rot13Reader struct {
 func (reader *rot13Reader) Read(b []byte) (int, error) {
 	r, err := reader.r.Read(b)
 	for x := range b[:r] {
-		fmt.Println(b[x])
 		if b[x] != 32 {
 			switch {
 			case b[x] > 109:
